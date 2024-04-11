@@ -22,15 +22,25 @@ function App() {
             text: "Car Service",
             day: "Apr 22nd at 9:00am",
             reminder: false,
-        },
+      },
+      {
+        id: 3,
+        text: "Car Service",
+        day: "Apr 22nd at 9:00am",
+        reminder: false,
+    },
     ]);
 
-    const name = "John Doe";
+    // Delete Task
+    const deleteTask = (id) => {
+        //setTasks(tasks.filter((task) => task.id !== id));
+        //console.log("delete", id);
+    };
 
     return (
         <div className="container">
             <Header />
-            <Tasks tasks={tasks} />
+            <Tasks tasks={tasks} onDelete={deleteTask} />
         </div>
     );
 }
