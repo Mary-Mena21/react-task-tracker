@@ -8,16 +8,8 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 
 function App() {
-    const [showAddTask, setShowAddTask] = useState(true);
-    const [tasks, setTasks] = useState([
-        // {
-        //   "id": 1,
-        //   "text": "Doctors Appointment",
-        //   "day": "Feb 5th at 2:30pm",
-        //   "reminder": true
-        // }
-    ]);
-    //const [error, setError] = useState(null);
+    const [showAddTask, setShowAddTask] = useState(false);
+    const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
         const getTasks = async () => {
@@ -27,18 +19,6 @@ function App() {
         };
         getTasks();
     }, []);
-    //     try {
-    //         const res = await fetch("http://localhost:5000/tasks");
-    //         if (!res.ok) {
-    //             throw new Error('Failed to fetch tasks');
-    //         }
-    //         const data = await res.json();
-    //         setTasks(data);
-    //     } catch (err) {
-    //         setError(err.message);
-    //         console.log(err);
-    //     }
-    //};
 
     //fetch data (tasks) from server
     const fetchTasks = async () => {
@@ -65,11 +45,6 @@ function App() {
         });
         const data = await res.json();
         setTasks([...tasks, data]);
-
-        // const id = Math.floor(Math.random() * 10000) + 1;
-        // const newTask = { id, ...task };
-        // setTasks([...tasks, newTask]);
-        //  console.log(task);
     };
 
     // Delete Task
@@ -128,7 +103,7 @@ function App() {
                             </>
                         }
                     />{" "}
-                    <Route path={"/about"} element={<About/>} />
+                    <Route path={"/about"} element={<About />} />
                 </Routes>
                 <Footer />
             </div>

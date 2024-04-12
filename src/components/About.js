@@ -5,7 +5,7 @@ export default function About() {
     return (
         <div>
             <h3>Version 1.0.0</h3>
-            <Link to='/'>Go Back</Link>
+            <Link to="/">Go Back</Link>
         </div>
     );
 }

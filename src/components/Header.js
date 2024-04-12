@@ -4,11 +4,9 @@ import Button from "./Button";
 import { useLocation } from "react-router-dom";
 
 export default function Header({ title, onAddTask, showAdd }) {
-    //const onClick = (e) => console.log("clicked");
     const location = useLocation();
     return (
         <header className="header">
-            {/* <h1>{props.title}</h1> */}
             <h1>{title}</h1>
             {location.pathname === "/" && (
                 <Button
